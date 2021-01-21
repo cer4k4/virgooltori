@@ -1,0 +1,40 @@
+<h2>Create you're post</h2>
+
+<form action="virgool/post" method="post">
+        <label for="user">Athour</label>
+	<select name="user" id="user">
+                {% for user in all_user %}
+		<option value="{{ user.id }}">{{ user.last_name }}</option>
+                {% endfor %}
+	</select>	
+
+	<label for="category">Category</label>
+	<select name="category" id="cat">
+		{% for cat in all_cat %}
+		<option value="{{ cat.id }}">{{ cat.name }}</option>
+		{% endfor %}
+	</select>
+
+	<br/><br/>
+	
+	<label for="header">Header</label>
+	<input type="text" id="header" name="header"/> <br/><br/>
+        
+	<p>Detail</p>
+	<input type="text" id="detail" name="detail"/> <br/><br/>
+	
+	<input type="submit" value="send"/>
+</form>
+
+
+<!--
+{% for field in form %}
+<div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+                <span class="text-danger small">{{ field.errors}}</span>
+        </div>
+        <label class="control-label col-sm-2">{{ field.label_tag }}</label>
+        <div class="col-sm-10">{{ field }}</div>
+</div>
+{% endfor %}
+-->

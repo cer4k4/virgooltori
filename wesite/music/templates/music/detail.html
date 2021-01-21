@@ -1,0 +1,16 @@
+{% extends 'music/base.html' %}
+{% block title %}Details Albums{% endblock %}
+{% block body %}
+<img src="{{ album.album_logo }}">
+
+<h1>{{ album.album_tilte }}</h1>
+<h2>{{ album.artist }}</h2>
+
+	{% for song in album.song_set.all %}
+		    {{ song.song_title }}
+		    {% if song.is_favorite %}
+		       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Golden_star.svg/12px-Golden_star.svg.png" />
+		    {% endif %}
+	    <br>
+	{%endfor%}
+{% endblock %}

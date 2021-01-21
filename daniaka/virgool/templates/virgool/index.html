@@ -1,0 +1,7 @@
+<title>Home-virgool</title>
+
+{% for cat in all_cat %}
+	<a href="/virgool/{{ cat.id }}/">
+		<img src="{{ cat.image }}" alt="{{ cat.name }}" width="200px"  height="200px"> {{ cat.name }}
+	</a>
+{% endfor %}
