@@ -1,6 +1,7 @@
-from django.http import Http404
-from django.shortcuts import render
+from django.http import Http404,HttpResponse
+from django.shortcuts import (get_object_or_404,render,HttpResponseRedirect)
 from .models import Category,Post,User
+from .forms import PostForm
 
 # index view
 def index(req):
@@ -28,9 +29,51 @@ def post(req,id_post,id_cat):
 
 # createpost
 def createpost(req):
-    all_user = User.objects.all()
-    all_cat = Category.objects.all()
-    all_post = Post.objects.all()
-    context = {'all_user' : all_user , 'all_cat' : all_cat ,'all_post' : all_post}
-
+    context = {}
+    form = PostForm(req.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect("/virgool")
+    context['form'] = form
     return render(req,'virgool/post_form.html',context)
+
+
+
+def delete_view(req,id_post):
+    post = get_object_or_404(Post, id =id_post)
+    if req.method == "POST":
+        post.delete()
+        return HttpResponseRedirect("/virgool")
+    context = { "object": post }
+    return render(req,"virgool/delete_post.html",context)
+
+def detail_update(req,id):
+    context ={}
+    context["data"] = Post.objects.get(id=id)
+    return render(req,"virgool/detail_post.html",context)
+
+def update_post(req,id):
+    context ={}
+    obj = get_object_or_404(Post, pk=id)
+    form = PostForm(req.POST or None , instance = obj)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect("/virgool")
+    context["form"] = form
+    return render(req,"virgool/update_post.html",context)
+
+
+
+
+
+
+
+'''def update_post(req,id_post):
+    context={}
+    obj = get_object_or_404(Post,id = id_post)
+    form = PostForm(req.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect("/"+str(id))
+    context["form"] = form
+    return render(req,"virgool/update_post.html",context)'''

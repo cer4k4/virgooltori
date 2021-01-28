@@ -1,30 +1,29 @@
 <h2>Create you're post</h2>
 
-<form action="virgool/post" method="post">
-        <label for="user">Athour</label>
-	<select name="user" id="user">
-                {% for user in all_user %}
-		<option value="{{ user.id }}">{{ user.last_name }}</option>
-                {% endfor %}
-	</select>	
 
-	<label for="category">Category</label>
-	<select name="category" id="cat">
-		{% for cat in all_cat %}
-		<option value="{{ cat.id }}">{{ cat.name }}</option>
-		{% endfor %}
-	</select>
-
-	<br/><br/>
-	
-	<label for="header">Header</label>
-	<input type="text" id="header" name="header"/> <br/><br/>
-        
-	<p>Detail</p>
-	<input type="text" id="detail" name="detail"/> <br/><br/>
-	
-	<input type="submit" value="send"/>
+<form  enctype="multipart/form-data" method="POST" >
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="save" />
 </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!--
@@ -37,4 +36,42 @@
         <div class="col-sm-10">{{ field }}</div>
 </div>
 {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <label for="user">Athour</label>
+	<select name="user" id="user">
+                {% for user in all_user %}
+		<option value="{{ user.id }}">{{ user.last_name }}</option>
+                {% endfor %}
+	</select>	
+	<label for="category">Category</label>
+	<select name="category" id="cat">
+		{% for cat in all_cat %}
+		<option value="{{ cat.id }}">{{ cat.name }}</option>
+		{% endfor %}
+	</select>
+	<br/><br/>
+	<label for="header">Header</label>
+	<input type="text" id="header" name="header"/> <br/><br/>
+	<p>Detail</p>
+	<input type="text" id="detail" name="detail"/> <br/><br/>
+
+
+
+
+
+
+
 -->

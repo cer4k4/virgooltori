@@ -12,4 +12,8 @@ urlpatterns=[
         path('<int:id_cat>'+'/post/'+'<int:id_post>'+'/',views.post,name='post'),
         # /virgool/post
         path('posts/',views.createpost,name='createpost'),
+        # /virgool/<id>/delete
+        path('<int:id_post>/delete',views.delete_view ),
+        # /virgool/<id>/update
+        path('<id>/update',views.update_post),
         ]

@@ -1,0 +1,24 @@
+.before {    
+	background-color:rgba(76, 175, 80, 0.3);
+      content: "";
+      background-image: url("https://miro.medium.com/max/700/0*QJ-il8zvxGyN8119.");
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+}
+.hero {
+    position: relative;
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+p{
+    text-align: center;
+    color: white;
+}
