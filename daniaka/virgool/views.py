@@ -1,7 +1,10 @@
 from django.http import Http404,HttpResponse
 from django.shortcuts import (get_object_or_404,render,HttpResponseRedirect)
 from .models import Category,Post,User
-from .forms import PostForm
+from .forms import PostForm,UserForm
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login, authenticate
+
 
 # index view
 def index(req):
@@ -38,7 +41,7 @@ def createpost(req):
     return render(req,'virgool/post_form.html',context)
 
 
-
+# deletepost
 def delete_view(req,id_post):
     post = get_object_or_404(Post, id =id_post)
     if req.method == "POST":
@@ -46,12 +49,12 @@ def delete_view(req,id_post):
         return HttpResponseRedirect("/virgool")
     context = { "object": post }
     return render(req,"virgool/delete_post.html",context)
-
+ 
 def detail_update(req,id):
     context ={}
     context["data"] = Post.objects.get(id=id)
     return render(req,"virgool/detail_post.html",context)
-
+# update post
 def update_post(req,id):
     context ={}
     obj = get_object_or_404(Post, pk=id)
@@ -62,11 +65,29 @@ def update_post(req,id):
     context["form"] = form
     return render(req,"virgool/update_post.html",context)
 
+# login 
+def login(req):
 
+    if req.method == 'POST':
+        form = AuthenticationForm(data=req.POST)
+        if form.is_valid():
+            return HttpResponseRedirect("/virgool")
+    else:
+        form = AuthenticationForm()
+    return render(req,'virgool/login.html',{'form':form})
 
-
-
-
+# signup
+def createuser(req):
+    context = {}
+    form = UserForm(req.POST)
+    if form.is_valid():
+        form.save()
+        username = form.cleaned_data.get('username')
+        raw_password = form.cleaned_data.get('password1')
+        user = authenticate(username=username, password=raw_password)
+        return HttpResponseRedirect("/virgool/login/")
+    context['form'] = form
+    return render(req,'virgool/signup.html',context)
 
 '''def update_post(req,id_post):
     context={}
