@@ -1,6 +1,4 @@
-.before {    
-	background-color:rgba(76, 175, 80, 0.3);
-      content: "";
+body {    
       background-image: url("https://miro.medium.com/max/700/0*QJ-il8zvxGyN8119.");
       background-size: cover;
       position: absolute;
@@ -13,12 +11,52 @@
     position: relative;
     height: 30vh;
     width: 100%;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
+    display: left;
+    align-items: left;
+    text-align: left;
+    justify-content: left;
+    padding: 10px;
+    text-decoration: center;
 }
 p{
-    text-align: center;
-    color: white;
+   color: white;
 }
+a{
+   color: white;
+}
+a:hover{
+   color: black;
+}
+h2{
+   color: white;
+}
+span{
+   color: white;
+}
+label{
+   color: white;
+}
+input{
+   color: black;
+}
+select{
+   color: black;
+}
+li{
+   color: white;
+}
+.createpost{
+   background-color: gray;
+   margin-left: 370px;
+   width: 320px;
+   padding: 10px;
+}
+
+.signup{
+   background-color: gray;
+   margin-left: 350px;
+   width: 550px;
+   padding: 10px;
+   margin: 3% 27%;
+}
+

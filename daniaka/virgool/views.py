@@ -6,11 +6,14 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate
 
 
+
 # index view
 def index(req):
     all_cat = Category.objects.all()
     context = {'all_cat': all_cat}
     return render(req,'virgool/index.html',context)     
+
+
 
 # category view
 def category(req,id_cat):
@@ -21,6 +24,7 @@ def category(req,id_cat):
         raise Http404("Category Does not exist")
     return render(req,'virgool/category.html',context)     
 
+
 # post
 def post(req,id_post,id_cat):
     try:
@@ -29,6 +33,8 @@ def post(req,id_post,id_cat):
     except Category.DoesNotExist:
         raise Http404("post Does not exist")
     return render(req,'virgool/post.html',context)
+
+
 
 # createpost
 def createpost(req):
@@ -41,6 +47,7 @@ def createpost(req):
     return render(req,'virgool/post_form.html',context)
 
 
+
 # deletepost
 def delete_view(req,id_post):
     post = get_object_or_404(Post, id =id_post)
@@ -49,11 +56,16 @@ def delete_view(req,id_post):
         return HttpResponseRedirect("/virgool")
     context = { "object": post }
     return render(req,"virgool/delete_post.html",context)
- 
+
+
+# get data for edit
 def detail_update(req,id):
     context ={}
     context["data"] = Post.objects.get(id=id)
     return render(req,"virgool/detail_post.html",context)
+
+
+
 # update post
 def update_post(req,id):
     context ={}
@@ -65,16 +77,20 @@ def update_post(req,id):
     context["form"] = form
     return render(req,"virgool/update_post.html",context)
 
+
+
 # login 
 def login(req):
 
     if req.method == 'POST':
         form = AuthenticationForm(data=req.POST)
         if form.is_valid():
-            return HttpResponseRedirect("/virgool")
+            return HttpResponseRedirect("/dashboard")
     else:
         form = AuthenticationForm()
     return render(req,'virgool/login.html',{'form':form})
+
+
 
 # signup
 def createuser(req):
@@ -88,6 +104,42 @@ def createuser(req):
         return HttpResponseRedirect("/virgool/login/")
     context['form'] = form
     return render(req,'virgool/signup.html',context)
+
+
+
+# dashboard user
+def dashboard(req,user):
+    try:
+        user = User.objects.get(username=user)
+        context = {'user' : user}
+    except Category.DoesNotExist:
+        raise Http404("user Does not exist")
+    return render(req,'virgool/dashboard.html',context)
+
+
+
+# get all post of user
+def posts(req):
+    all_post = Post.objects.all()
+    context = {'all_post':all_post}
+    return render(req,'virgool/posts.html',context)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 '''def update_post(req,id_post):
     context={}

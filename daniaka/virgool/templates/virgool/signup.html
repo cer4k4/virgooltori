@@ -1,9 +1,16 @@
-<h2>Signup</h2>
+{% load static %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy"/>
+<link rel="stylesheet" type="text/css" href="{% static 'virgool/style.css' %}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+<div class="signup">
+	<h2>Wellcome to you're website ;)</h2>
 
 <form  enctype="multipart/form-data" method="POST" >
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="save" />
 </form>
-
+</div>

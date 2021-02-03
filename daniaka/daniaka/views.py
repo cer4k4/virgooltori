@@ -1,6 +1,5 @@
-from django.http import HttpResponse
-
+from django.shortcuts import render
 
 
 def home(req):
-    return HttpResponse('yesss here is the home page bro ;)')
+    return render(req,'daniaka/home.html')

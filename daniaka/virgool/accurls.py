@@ -6,5 +6,5 @@ app_name =  'virgool'
 urlpatterns=[
         path('login/',views.login,name='login'),
         path('signup/',views.createuser,name='signup'),
-
+        path('<user>',views.dashboard,name='dashboard'),
         ]
