@@ -9,10 +9,18 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form class="site-form" method="post">
+<div>
+<form class=" login site-form" method="post">
+  <h1>login</h1>
   {% csrf_token %}
-  {{ form }}
+  <p> username </p>
+  {{ form.username }}
+  <br>
+  <p> password </p>
+  {{ form.password}}
+  <br>
   <input type="submit" value="ok"/>
+</div>
 </form>
 </body>
 </html>

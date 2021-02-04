@@ -59,4 +59,22 @@ li{
    padding: 10px;
    margin: 3% 27%;
 }
-
+.login{
+   background-color: gray;
+   margin-left: 350px;
+   width: 350px;
+   padding: 10px;
+   margin: 5% 30%;
+   text-align: center;
+}
+#id_password{
+   margin-left: 10px;
+   width: 55%;
+}
+#id_username{
+   margin-left: 10px;
+   width: 55%;
+}
+h1{
+   color: white;
+}
