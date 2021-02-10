@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'virgool.apps.VirgoolConfig',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'virgool',
         'USER':'root',
-        'PASSWORD':'',
+        'PASSWORD':'Qtlsd@k47',
         'HOST':'localhost',
     }
 }

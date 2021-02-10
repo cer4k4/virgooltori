@@ -1,3 +1,14 @@
+<html>
+{% extends 'virgool/base.html'%}
+{% block body %}
+<body>
+<div class="post">
 <img src="{{post.image}}" alt="{{post.image}}" width="400px" height="200px"/>
 <h1>{{ post.header }}</h1>
 <p>{{ post.detail }}</p>
+<a href="/virgool/{{post.id}}/update"><input type="button" value="edit"></a>
+<a href="/virgool/{{post.id}}/delete"><input type="button" value="delete"></a>
+</div>
+</body>
+{% endblock%}
+</html>

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 {% extends 'virgool/base.html' %}
-
 {% block body %}
+<body class="category">
 {% for cat in all_cat %}
 	<a class="hero" href="/virgool/{{ cat.id }}/">
 		<img src="{{ cat.image }}" alt="{{ cat.name }}" width="200px"  height="200px">
 		{{ cat.name}}
 	</a>
 {% endfor %}
+</body>
 {% endblock %}

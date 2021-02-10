@@ -1,7 +1,7 @@
 from django.http import Http404,HttpResponse
 from django.shortcuts import (get_object_or_404,render,HttpResponseRedirect)
 from .models import Category,Post,User
-from .forms import PostForm
+from .forms import PostForm,UserForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate
 
@@ -59,17 +59,17 @@ def delete_view(req,id_post):
 
 
 # get data for edit
-def detail_update(req,id_post):
+def detail_update(req,id):
     context ={}
-    context["data"] = Post.objects.get(pk=id_post)
+    context["data"] = Post.objects.get(id=id)
     return render(req,"virgool/detail_post.html",context)
 
 
 
 # update post
-def update_post(req,id_post):
+def update_post(req,id):
     context ={}
-    obj = get_object_or_404(Post, id=str(id_post))
+    obj = get_object_or_404(Post, pk=id)
     form = PostForm(req.POST or None , instance = obj)
     if form.is_valid():
         form.save()

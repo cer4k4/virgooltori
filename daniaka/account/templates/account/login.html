@@ -2,25 +2,29 @@
 <html>
 <head>
 {% load static %}
+<title> login </title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy" />
-<link rel="stylesheet" type="text/css" href="{% static 'virgool/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'account/style.css' %}" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
-<body>
-<div>
-<form class=" login site-form" method="post">
+{% block body %}
+<body class="loginbody">
+<div class="login">
+<form class="site-form" method="post">
   <h1>login</h1>
   {% csrf_token %}
-  <p> username </p>
+  <p class="loginp"> username </p>
   {{ form.username }}
   <br>
-  <p> password </p>
+  <p class="loginp"> password </p>
   {{ form.password}}
   <br>
+  <a href="/"><input type="button" value="cancel"/></a>
   <input type="submit" value="ok"/>
 </div>
 </form>
 </body>
+{% endblock %}
 </html>

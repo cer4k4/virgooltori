@@ -20,5 +20,5 @@ urlpatterns = [
     path('',views.home,name='home'),
     path('admin/', admin.site.urls),
     path('virgool/',include('virgool.urls')),
-    path('account/',include('virgool.accurls')),
+    path('account/',include('account.urls')),
 ]

@@ -7,17 +7,6 @@ body {
       bottom: 0px;
       left: 0px;
 }
-.hero {
-    position: relative;
-    height: 30vh;
-    width: 100%;
-    display: left;
-    align-items: left;
-    text-align: left;
-    justify-content: left;
-    padding: 10px;
-    text-decoration: center;
-}
 p{
    color: white;
 }
@@ -45,27 +34,94 @@ select{
 li{
    color: white;
 }
+h1{
+   color: white;
+}
+.hero {
+    position: relative;
+    height: 30vh;
+    width: 100%;
+    display: left;
+    align-items: left;
+    text-align: left;
+    justify-content: left;
+    padding: 10px;
+    text-decoration: center;
+}
+.category{
+      background-image: url("images/category.jpg");
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+}
+.home{
+      background-image: url("images/home.jpg");
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+}
+.createpostbody{
+      background-image: url("images/createpost.jpg");
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px
+}
 .createpost{
-   background-color: gray;
    margin-left: 370px;
    width: 320px;
    padding: 10px;
 }
-
-.signup{
-   background-color: gray;
-   margin-left: 350px;
-   width: 550px;
-   padding: 10px;
-   margin: 3% 27%;
+.updatebody{
+   background-image: url("images/edit.jpg");
+   background-size: cover;
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   bottom: 0px;
+   left: 0px
 }
-.login{
-   background-color: gray;
-   margin-left: 350px;
-   width: 350px;
-   padding: 10px;
-   margin: 5% 30%;
+.updatepost{
    text-align: center;
+   background-color: gray;
+   margin-left: 390px;
+   width: 320px;
+   padding: 15px;
+   margin:5% 37%;
+}
+.postsbody{
+   background-image: url("images/posts.jpg");
+   background-size: cover;
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   bottom: 0px;
+   left: 0px
+
+}
+.posts{
+   text-align:center;
+   background-color:gray;
+   width:204px;
+   margin-left: 200px;
+   padding: 2px;
+   margin:2% 7%;
+}
+.post{
+   text-align:center;
+   background-color:gray;
+   width:450px;
+   margin-left: 200px;
+   padding: 2px;
+   margin:2% 7%
 }
 #id_password{
    margin-left: 10px;
@@ -75,6 +131,5 @@ li{
    margin-left: 10px;
    width: 55%;
 }
-h1{
-   color: white;
-}
+
+

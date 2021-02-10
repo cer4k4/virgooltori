@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 {% extends 'virgool/base.html' %}
 {% block body%}
-<div>
+<body class="updatebody">
+<div class="updatepost">
 	<form method="POST">	
 		{% csrf_token %}
 		{{ form.as_p }}
 		<input type="submit" value="Update"/>
+		<a href="/virgool"><input type="button" value="Cancel"/></a>
 	</form>
 </div>
+</body>
 {% endblock %}
