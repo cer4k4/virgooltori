@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> Home </title>
+{% load static %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy"/>
+<link rel="stylesheet" type="text/css" href="{% static 'virgool/style.css' %}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head> 
+<body class="home">
+
+<nav class="navbar navbar-defult">
+	<div class="container-fluid">
+		
+		<!-- Logo -->
+		<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+				<span class="icon-bar glyphicon glyphicon-tasks"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+		</button>
+			<a class="navbar-brand" href="/"> virgool </a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="topNavBar">
+			<ul class="nav navbar-nav">
+
+			<!-- About me  -->
+				<li class="active">
+			        <a href="https://github.com/cer4k4">
+				<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;About me
+				</a>
+				</li>
+			</ul>
+			
+
+			<ul class="nav navbar-nav navbar-right">
+
+			<!-- Signup -->	
+				<li class="active">
+				<a href="{% url 'account:signup' %}">
+				<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp; Signup
+				</a>
+              			</li>
+
+			<!-- Login -->
+				<li class="active">
+					<a href="{% url 'account:login' %}">
+				<span class="glyphicon glyphicon-play" aria-hidden="true"></span>&nbsp; Login
+				</a>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+</nav>
+{% block body %}
+{% endblock %}
+</body>
+</html>

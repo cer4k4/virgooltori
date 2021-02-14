@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'virgool/base.html' %}
+{% block body %}
+<div class="main">
+	<form  method="POST">
+		{% csrf_token %}
+		<label>Are you sure to delete this post!</label>
+		<input type="submit" value="Yes" />
+		<a href="/virgool">Cancel</a>
+	</form>
+</div>
+{% endblock %}

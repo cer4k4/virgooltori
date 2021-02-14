@@ -1,0 +1,80 @@
+
+p{
+   color: white;
+}
+a{
+   color: white;
+}
+a:hover{
+   color: black;
+}
+h2{
+   color: white;
+}
+span{
+   color: white;
+}
+label{
+   color: white;
+}
+input{
+   color: black;
+}
+select{
+   color: black;
+}
+li{
+   color: white;
+}
+h1{
+   color: white;
+}
+.signupbody{
+      background-image: url("images/signup.jpg");
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px
+}
+.loginbody{
+      background-image: url("images/login.jpg");
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px
+}
+.signup{
+   background-color: gray;
+   margin-left: 350px;
+   width: 550px;
+   padding: 10px;
+   margin: 3% 27%;
+}
+.login{
+   background-color: #;
+   margin-left: 350px;
+   width: 350px;
+   height: 300px;
+   padding: 10px;
+   margin: 10% 35%;
+   text-align: center;
+}
+.loginp{
+   background-color: gray;
+   text-align: center;
+   width:73px;
+   margin:2% 39%;
+}
+#id_password{
+   margin-left: 10px;
+   width: 55%;
+}
+#id_username{
+   margin-left: 10px;
+   width: 55%;
+}
+
