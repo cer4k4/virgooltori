@@ -54,6 +54,15 @@ h1{
    padding: 10px;
    margin: 3% 27%;
 }
+.dashboard{
+   background-image: url("https://i.pinimg.com/originals/af/8d/63/af8d63a477078732b79ff9d9fc60873f.jpg");
+   background-size: cover;
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   bottom: 0px;
+   left: 0px
+}
 .login{
    background-color: #;
    margin-left: 350px;

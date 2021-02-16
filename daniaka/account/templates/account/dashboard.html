@@ -1,3 +1,15 @@
+<head>
+{% load static %}
+<title> Dashboard </title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy" />
+<link rel="stylesheet" type="text/css" href="{% static 'account/style.css' %}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body class="dashboard">
+
 <h1>{{ user.username }}</h1>
 <p>Active users => {{ count }}</p>
 
@@ -7,3 +19,22 @@
 	<li>{{cost}}</li>
 </ul>
 
+<table style="width:50%">
+	<tr>
+	<th>UserNames</th>
+	<th>Worte</th>
+	<th>Amoung </th>
+	</tr>
+	{% for name in names %}
+	<tr></tr>
+        {% for w in words %}
+	<tr></tr>
+	{% for c in cost%}
+	<tr></tr>
+	<td>{{name}}</td>
+	<td>{{w}}</td>
+	<td>{{c}}<td>
+	{% endfor %}
+        {% endfor %}
+	{% endfor %}
+</body>
