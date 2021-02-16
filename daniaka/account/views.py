@@ -34,6 +34,7 @@ def createuser(req):
 # dashboard user
 def dashboard(req,user):
     try:
+<<<<<<< HEAD
         #count of users
         con = connection.cursor()
         con.execute('select * from countrealyuser')
@@ -56,6 +57,14 @@ def dashboard(req,user):
         user = User.objects.get(username=user)
         context = {'user' : user,'count' : count,'names' : names,'words' :words,'cost' : cost}
     except User.DoesNotExist:
+=======
+        con = connection.cursor()
+        con.execute('call test()')
+        result = con.fetchall()
+        user = User.objects.get(username=user)
+        context = {'user' : user,'result':result}
+    except Category.DoesNotExist:
+>>>>>>> 89671f70ae0a290a972fccb5aaa5b96063ad7163
         raise Http404("user Does not exist")
     return render(req,'account/dashboard.html',context)
 
