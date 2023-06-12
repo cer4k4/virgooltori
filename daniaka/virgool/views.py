@@ -38,6 +38,7 @@ def post(req,id_post,id_cat):
 
 # createpost
 def createpost(req):
+    print("aka")
     context = {}
     form = PostForm(req.POST or None)
     if form.is_valid():
